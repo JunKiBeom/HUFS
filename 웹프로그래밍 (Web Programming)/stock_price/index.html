@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Running JavaScript</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <style>
+          table {
+              width: 100%;
+              border-top: 1px solid #444444;
+              border-collapse: collapse;
+          }
+          th, td {
+              border: 1px solid #444444;
+              padding: 10px;
+              text-align: center;
+          }
+          thead tr{
+              background-color: #EAEAEA;
+          }
+          tbody tr:nth-child(2n) {
+              background-color: #EAEAEA;
+          }
+      </style>
+
+  </head>
+  <body>
+    <table style="width: 100%">
+      <thead>
+        <tr>
+            <th style="width: 10%">Date</th>
+            <th style="width: 9%">KB금융</th>
+            <th style="width: 9%">LG</th>
+            <th style="width: 9%">LG전자</th>
+            <th style="width: 9%">NAVER</th>
+            <th style="width: 9%">POSCO</th>
+            <th style="width: 9%">S-Oil</th>
+            <th style="width: 9%">SK</th>
+            <th style="width: 9%">SK하이닉스</th>
+            <th style="width: 9%">삼성전자</th>
+            <th style="width: 9%">카카오</th>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+      </tbody>
+    </table>
+
+    <script src="utils.js"></script>
+    <script src="csvdata.js"></script>
+    <script>
+    var selNames = ['LG', 'NAVER', 'SK', '삼성전자', '카카오','KB금융','POSCO','S-Oil','SK하이닉스','LG전자']
+    var csv = getCsvData();
+    console.log(csv);
+    json = csv2json(csv);
+    //console.log(json[0]);
+    sel = filterName(json, "name", selNames)
+    /*console.log(sel[0]);
+    console.log(sel[1]);
+    console.log(sel[2]);
+    console.log(sel[3]);
+    console.log(sel[4]);
+    console.log(sel[5]);
+    console.log(sel[6]);
+    console.log(sel[7]);
+    console.log(sel[8]);
+    console.log(sel[9]);*/
+    rows = groupByDate(sel);
+    //console.log(rows);
+    
+    for (var i=0;i<rows.length;i++) {
+        var da = rows[i]["date"];
+        var cols = rows[i]["cols"];
+        console.log(da);
+        console.log(cols);
+        console.log(cols.length);
+
+        var tabrow = "<tr>"
+            + '<td style="width: 9%">' + da + "</td>"
+        for (var j = 0; j < cols.length; j++) {
+            tabrow = tabrow + '<td style="width:9%; text-align:center;">'
+                + comma(cols[j]['price']) + "</td>";
+        }
+        tabrow += "</tr>";
+        console.log(tabrow)
+        $('#tbody').append(tabrow);
+        //$("tr:even").css("background","green")
+
+    }
+    </script>
+        
+    </body>
+</html>
