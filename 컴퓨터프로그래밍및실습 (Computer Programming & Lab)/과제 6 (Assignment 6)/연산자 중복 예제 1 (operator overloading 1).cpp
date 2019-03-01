@@ -1,17 +1,17 @@
 #include <iostream>
 using namespace std;
 
-class Vector // º¤ÅÍ Å¬·¡½º
+class Vector // ë²¡í„° í´ë˜ìŠ¤
 {
 private:
 	double x, y;
 public:
-	Vector(double xvalue = 0.0, double yvalue = 0.0) :x(xvalue), y(yvalue){} // ±âº» ÃÊ±âÈ­
-	void display() // Ãâ·Â
+	Vector(double xvalue = 0.0, double yvalue = 0.0) :x(xvalue), y(yvalue){} // ê¸°ë³¸ ì´ˆê¸°í™”
+	void display() // ì¶œë ¥
 	{
 		cout << "(" << x << "," << y << ")" << endl;
 	}
-	Vector operator+(Vector& v2) // ¸â¹ö ÇÔ¼ö·Î ¿¬»êÀÚ Áßº¹, +¿¬»êÀÚ ÇÔ¼ö Á¤ÀÇ
+	Vector operator+(Vector& v2) // ë©¤ë²„ í•¨ìˆ˜ë¡œ ì—°ì‚°ì ì¤‘ë³µ, +ì—°ì‚°ì í•¨ìˆ˜ ì •ì˜
 	{
 		Vector v;
 		v.x = this->x + v2.x;
