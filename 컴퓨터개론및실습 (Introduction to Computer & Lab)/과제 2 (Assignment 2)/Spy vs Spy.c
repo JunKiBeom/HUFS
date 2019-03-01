@@ -7,24 +7,24 @@ int main()
 	int longitude, latitude;
 	int select;
 
-	printf("(1) ¾ÏÈ£È­\t(2) º¹È£È­ : ");
+	printf("(1) ì•”í˜¸í™”\t(2) ë³µí˜¸í™” : ");
 	scanf("%d", &select);
 
 	switch (select)
 	{
 	case 1:
-		printf("X, YÀÇ À§Ä¡´Â? ");
+		printf("X, Yì˜ ìœ„ì¹˜ëŠ”? ");
 		scanf("%d %d", &X, &Y);
 		X *= 255, Y *= 255, X -= 8332, Y -= 26584;
 
-		printf("¾ÏÈ£È­µÈ À§Ä¡´Â %d\t%dÀÔ´Ï´Ù.\n", X += 543184, Y += 313787);
+		printf("ì•”í˜¸í™”ëœ ìœ„ì¹˜ëŠ” %d\t%dì…ë‹ˆë‹¤.\n", X += 543184, Y += 313787);
 		break;
 
 	case 2:
-		printf("¾ÏÈ£È­µÈ À§Ä¡¸¦ ÀÔ·ÂÇÏ¼¼¿ä. ");
+		printf("ì•”í˜¸í™”ëœ ìœ„ì¹˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”. ");
 		scanf("%d %d", &longitude, &latitude);
 		longitude -= 543184, latitude -= 313787, longitude += 8332, latitude += 26584;
-		printf("ÇöÀç À§Ä¡´Â ´ÙÀ½°ú °°½À´Ï´Ù. %d %d\n", longitude /= 255, latitude /= 255);
+		printf("í˜„ì¬ ìœ„ì¹˜ëŠ” ë‹¤ìŒê³¼ ê°™ìŠµë‹ˆë‹¤. %d %d\n", longitude /= 255, latitude /= 255);
 	}
 	return 0;
 
