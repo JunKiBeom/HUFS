@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-struct student // ÇĞ»ı ±¸Á¶Ã¼
+struct student // í•™ìƒ êµ¬ì¡°ì²´
 {
 	char*name;
 	int math[2];
@@ -12,31 +12,31 @@ struct student // ÇĞ»ı ±¸Á¶Ã¼
 
 int  main()
 {
-	int num; // ÇĞ»ı ¼ö
-	struct student *arr = 0; // ±¸Á¶Ã¼ Æ÷ÀÎÅÍ
+	int num; // í•™ìƒ ìˆ˜
+	struct student *arr = 0; // êµ¬ì¡°ì²´ í¬ì¸í„°
 	cin >> num;
 	
-	arr = new student[num]; // ÇĞ»ı ¼ö ¸¸Å­ ±¸Á¶Ã¼ ¹è¿­ Å©±â µ¿ÀûÇÒ´ç
+	arr = new student[num]; // í•™ìƒ ìˆ˜ ë§Œí¼ êµ¬ì¡°ì²´ ë°°ì—´ í¬ê¸° ë™ì í• ë‹¹
 
 	for (int i=0; i < num; i++)
 	{
-		int credit[2] = { 0 }; // ¼ºÀû ÀúÀå ¹è¿­
-		arr[i].name = new char[100]; // ÇĞ»ı ÀÌ¸§ ÃÖ´ë 100Ä­À¸·Î µ¿ÀûÇÒ´ç
+		int credit[2] = { 0 }; // ì„±ì  ì €ì¥ ë°°ì—´
+		arr[i].name = new char[100]; // í•™ìƒ ì´ë¦„ ìµœëŒ€ 100ì¹¸ìœ¼ë¡œ ë™ì í• ë‹¹
 		cin >> arr[i].name;
 		for (int j = 0; j < 2; j++)
 		{
-			cin >> arr[i].math[j]; // ¼öÇĞ ¼ºÀû Áß°£ ±â¸» ¼øÀ¸·Î ÀÔ·Â
-			credit[0] += arr[i].math[j]; // 0¹ø ¹è¿­¿¡ ¼öÇĞ ¼ºÀû ÇÕ ÀúÀå
+			cin >> arr[i].math[j]; // ìˆ˜í•™ ì„±ì  ì¤‘ê°„ ê¸°ë§ ìˆœìœ¼ë¡œ ì…ë ¥
+			credit[0] += arr[i].math[j]; // 0ë²ˆ ë°°ì—´ì— ìˆ˜í•™ ì„±ì  í•© ì €ì¥
 		}
 		for (int j = 0; j < 2; j++)
 		{
-			cin >> arr[i].eng[j]; // ¿µ¾î ¼ºÀû Áß°£ ±â¸» ¼øÀ¸·Î ÀÔ·Â
-			credit[1] += arr[i].eng[j]; // 1¹ø ¹è¿­¿¡ ¿µ¾î ¼ºÀû ÇÕ ÀúÀå
+			cin >> arr[i].eng[j]; // ì˜ì–´ ì„±ì  ì¤‘ê°„ ê¸°ë§ ìˆœìœ¼ë¡œ ì…ë ¥
+			credit[1] += arr[i].eng[j]; // 1ë²ˆ ë°°ì—´ì— ì˜ì–´ ì„±ì  í•© ì €ì¥
 		}
 
 		for (int n = 0; n < 2; n++)
 		{
-			switch (n) // ¼öÇĞ = 0, ¿µ¾î = 1 ±¸ºĞ
+			switch (n) // ìˆ˜í•™ = 0, ì˜ì–´ = 1 êµ¬ë¶„
 			{
 			case 0:
 				if (credit[0] >= 180)
@@ -97,8 +97,8 @@ int  main()
 	}
 	for (int i = 0; i < num; i++)
 	{
-		cout << arr[i].name << " " << arr[i].mathGrade << " " << arr[i].engGrade << endl; // Ãâ·Â
-		delete[] arr[i].name; // Ãâ·ÂÇßÀ¸¸é ¹İ³³
+		cout << arr[i].name << " " << arr[i].mathGrade << " " << arr[i].engGrade << endl; // ì¶œë ¥
+		delete[] arr[i].name; // ì¶œë ¥í–ˆìœ¼ë©´ ë°˜ë‚©
 	}
-	delete[] arr; // ½ÇÇà ³¡³ª¸é ¹İ³³
+	delete[] arr; // ì‹¤í–‰ ëë‚˜ë©´ ë°˜ë‚©
 }
