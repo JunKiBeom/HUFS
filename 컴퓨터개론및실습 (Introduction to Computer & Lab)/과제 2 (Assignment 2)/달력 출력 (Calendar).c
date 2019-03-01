@@ -7,10 +7,10 @@ int main()
 	int day, day_1 = 0, day_2 = 0, yoon = 0;
 	int month_day[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
-	printf("³â, ¿ùÀ» ÀÔ·ÂÇÏ¼¼¿ä:");
+	printf("ë…„, ì›”ì„ ì…ë ¥í•˜ì„¸ìš”:");
 	scanf("%d %d", &year, &month);
 
-	//À±³â ±¸ÇÏ±â
+	//ìœ¤ë…„ êµ¬í•˜ê¸°
 	for (i = 1; i < year; i++)
 	{
 		if (i % 4 == 0 && ((i % 100 != 0) || (i % 400 == 0)))
@@ -19,48 +19,48 @@ int main()
 			//printf("%d\n", i);
 		}
 	}
-	//printf("À±³â:%d¹ø\n", special);
+	//printf("ìœ¤ë…„:%dë²ˆ\n", special);
 
 
-	/* 1)ÀÔ·Â³âµµ Àü³âµµ±îÁö ÀÏ¼ö */
+	/* 1)ì…ë ¥ë…„ë„ ì „ë…„ë„ê¹Œì§€ ì¼ìˆ˜ */
 	day_1 = 365 * (year - 1) + yoon;
-	//printf("ÀÏ¼ö1:%d\n", day1);
+	//printf("ì¼ìˆ˜1:%d\n", day1);
 
 
-	/* 2)ÀÔ·Â³âµµ 1¿ù 1ÀÏºÎÅÍ ÀÔ·Â¿ù 1ÀÏ±îÁö ÀÏ¼ö */
+	/* 2)ì…ë ¥ë…„ë„ 1ì›” 1ì¼ë¶€í„° ì…ë ¥ì›” 1ì¼ê¹Œì§€ ì¼ìˆ˜ */
 	for (i = 0; i < month - 1; i++)
 	{
 		day_2 += month_day[i];
 	}
 	day_2 += 1;
-	//À±³âÀÏ ¶§
+	//ìœ¤ë…„ì¼ ë•Œ
 	if ((year % 4 == 0 && !(year % 100 == 0)) || (year % 400 == 0))
 	{
 		yun = 1;
 		if (month >= 3)
 			day_2 += 1;
 	}
-	//À±³âÀÌ ¾Æ´Ò ¶§
+	//ìœ¤ë…„ì´ ì•„ë‹ ë•Œ
 	else
 	{
 		yun = 0;
 		day_2 = day_2;
 	}
-	//printf("ÀÏ¼ö2:%d\n", day2);
+	//printf("ì¼ìˆ˜2:%d\n", day2);
 
 
-	/* 3) 1)°ú 2)¸¦ ´õÇÑ ÃÑÀÏ¼ö */
+	/* 3) 1)ê³¼ 2)ë¥¼ ë”í•œ ì´ì¼ìˆ˜ */
 	day = day_1 + day_2;
-	//printf("ÃÑ ÀÏ¼ö:%d\n", day);
+	//printf("ì´ ì¼ìˆ˜:%d\n", day);
 
 
-	/* Á¦¸ñ Ãâ·Â */
-	printf("\n\t  %d³â  %d¿ù\n", year, month);
+	/* ì œëª© ì¶œë ¥ */
+	printf("\n\t  %dë…„  %dì›”\n", year, month);
 	printf("\t\t\t\t\t\n");
 	printf(" SUN MON TUE WED THU FRI SAT\n");
 	printf("\t\t\t\t\t\n");
 
-	//½ÃÀÛ ¿äÀÏ¿¡ ¸ÂÃç Á¤·Ä
+	//ì‹œì‘ ìš”ì¼ì— ë§ì¶° ì •ë ¬
 	for (i = 0; i < day % 7; i++)
 	{
 		printf("    ");
@@ -68,7 +68,7 @@ int main()
 
 	int cnt = (day % 7);
 
-	if (yun == 1 && month == 2)//À±³â 2¿ùÀÏ ¶§
+	if (yun == 1 && month == 2)//ìœ¤ë…„ 2ì›”ì¼ ë•Œ
 	{
 		for (i = 1; i <= 29; i++)
 		{
@@ -78,7 +78,7 @@ int main()
 				printf("\n");
 		}
 	}
-	else//±× ¿Ü ÀÏ¹İ Ãâ·Â
+	else//ê·¸ ì™¸ ì¼ë°˜ ì¶œë ¥
 	{
 		for (i = 1; i <= month_day[month - 1]; i++)
 		{
