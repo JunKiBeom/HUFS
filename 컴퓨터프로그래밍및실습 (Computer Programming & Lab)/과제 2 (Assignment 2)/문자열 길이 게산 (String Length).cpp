@@ -1,25 +1,25 @@
 #include <iostream>
 using namespace std;
 
-int num = 0; // ¹®ÀÚ¿­ ±æÀÌ °è»ê º¯¼ö
+int num = 0; // ë¬¸ìì—´ ê¸¸ì´ ê³„ì‚° ë³€ìˆ˜
 
 void str(char *ary);
 
 int main()
 {
-	char arr[256]; // ÀÔ·Â¹ŞÀ» ¹®ÀÚ¿­
+	char arr[256]; // ì…ë ¥ë°›ì„ ë¬¸ìì—´
 	cin.getline(arr, 256);
 
 	str(arr);
 	cout << num << endl;
 }
 
-void str(char *ary) // Æ÷ÀÎÅÍ·Î ¹®ÀÚ¿­ ¹Ş°í ±æÀÌ °è»ê
+void str(char *ary) // í¬ì¸í„°ë¡œ ë¬¸ìì—´ ë°›ê³  ê¸¸ì´ ê³„ì‚°
 {
 	int i;
 	for (i = 0; i < 256; i++)
 	{
-		if (ary[i] == '\0') // \0ÀÎ null¹®ÀÚ µµ´Ş½Ã ÁßÁö
+		if (ary[i] == '\0') // \0ì¸ nullë¬¸ì ë„ë‹¬ì‹œ ì¤‘ì§€
 			break;
 		else
 			num++;
