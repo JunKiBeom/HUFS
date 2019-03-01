@@ -6,21 +6,21 @@ int main()
 	double x;
 	double y=0;
 	double temp=0;
-	printf("¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä. ");
+	printf("ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”. ");
 	scanf("%lf", &x);
 
 	printf("x		=	%.6lf\n", x);
 
-	printf("x(¹İ¿Ã¸²)	=	%.3lf\n", x);
+	printf("x(ë°˜ì˜¬ë¦¼)	=	%.3lf\n", x);
 
 	temp = x;
 	temp = (temp * 1000) - 0.5;
-	printf("x(³»¸²)		=	%.3lf\n", temp/1000);
+	printf("x(ë‚´ë¦¼)		=	%.3lf\n", temp/1000);
 
 	y = x;
 	y = (y * 1000) + 0.5;
-	printf("x(¿Ã¸²)		=	%.3lf\n\n", y/1000);
+	printf("x(ì˜¬ë¦¼)		=	%.3lf\n\n", y/1000);
 
-	printf("201703091 Àü±â¹ü\n");
+	printf("201703091 ì „ê¸°ë²”\n");
 
 }
