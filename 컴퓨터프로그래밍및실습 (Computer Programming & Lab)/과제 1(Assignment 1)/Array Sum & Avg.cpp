@@ -18,8 +18,8 @@ int main()
 			avg /= 10;
 		}
 	}
-	cout << "¹è¿­ÀÇ ÇÕ = " << sum << endl;
-	cout << "¹è¿­ÀÇ Æò±Õ = " << avg << endl;
+	cout << "ë°°ì—´ì˜ í•© = " << sum << endl;
+	cout << "ë°°ì—´ì˜ í‰ê·  = " << avg << endl;
 
 	return 0;
 }
