@@ -1,12 +1,12 @@
-def QucikSelect(L,k):
+def QuickSelect(L,k):
     A, M, B = [], [] ,[]
     p=L[0]
     for a in L:
         if a<p: A.append(a)
         elif a==p:M.append(a)
         else: B.append(a)
-    if len(A) >= k: return QucikSelect(A,k)
-    elif len(A)+len(M) < k: return QucikSelect(B, k-len(A)-len(M))
+    if len(A) >= k: return QuickSelect(A,k)
+    elif len(A)+len(M) < k: return QuickSelect(B, k-len(A)-len(M))
     else: return p
 
 def num3(card):
@@ -41,7 +41,7 @@ def num3(card):
 
     elif neg==3:                                         # 음수 3
         for i in range(1,3):
-            m*=QucikSelect(card,i)
+            m*=QuickSelect(card,i)
         return m
 
     else:                                                # 나머지 경우 (양 1, 0 2 / 음 1, 0 2 / 양 1, 0 1, 음 1)
@@ -61,7 +61,7 @@ def num(card):
     if pos>=3:                                            # 양수 3개 이상 가장 큰거 3개 곱
         try:
             for i in range(0,3):
-                m*=QucikSelect(card,len(card)-i)
+                m*=QuickSelect(card,len(card)-i)
         except RecursionError:
             n=card[0]
             temp=0
@@ -80,12 +80,12 @@ def num(card):
 
     elif pos>=2 and (zero<2 or neg<2):
         for i in range(0,2):
-            m*=QucikSelect(card,len(card)-i)
+            m*=QuickSelect(card,len(card)-i)
         return m
 
     elif neg>=2:                                          # 음수 2개 이상
         for i in range(1,3):
-                max*=QucikSelect(card,i)
+                max*=QuickSelect(card,i)
 
         if zero==0 and pos==0:                            # 음수만 있는 경우
             return max
@@ -94,16 +94,16 @@ def num(card):
             return max
 
         elif pos==1:                                      # 양수 1개 있을 경우 가장 큰 음수 곱
-            m=QucikSelect(card,len(card))
+            m=QuickSelect(card,len(card))
             m*=max
             return m
 
         elif pos>=2:                                      # 양수 2개 이상 있을 경우
-            if max>QucikSelect(card,len(card)-1):         # 음수 2개 곱이 두번쨰로 큰 수 보다 크면 max*가장 큰 양수
-                m=QucikSelect(card,len(card))*max
+            if max>QuickSelect(card,len(card)-1):         # 음수 2개 곱이 두번쨰로 큰 수 보다 크면 max*가장 큰 양수
+                m=QuickSelect(card,len(card))*max
             else:                                         # 아니라면 가장 큰 양수 * 두번째로 큰 양수
                 for i in range(0,2):
-                    m*=QucikSelect(card,len(card)-i)
+                    m*=QuickSelect(card,len(card)-i)
             return m
 
     else:                                                 # 나머지 경우
