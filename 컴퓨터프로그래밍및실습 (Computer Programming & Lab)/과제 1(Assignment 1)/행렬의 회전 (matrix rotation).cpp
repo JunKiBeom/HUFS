@@ -8,16 +8,16 @@ void mat49(int(*arr)[7]);
 
 int main(void)
 {
-	int num = 1; // ¹è¿­ÀÇ °ªÀ» ³Ö±â À§ÇØ »ç¿ë
+	int num = 1; // ë°°ì—´ì˜ ê°’ì„ ë„£ê¸° ìœ„í•´ ì‚¬ìš©
 	int mat3[3][3] = { 0 }, mat5[5][5] = { 0 }, mat7[7][7] = { 0 };
-	int col, row; // for¹® Á¦¾î Çà,·Ä º¯¼ö
+	int col, row; // forë¬¸ ì œì–´ í–‰,ë ¬ ë³€ìˆ˜
 
 	for (col = 0; col < 3; col++)
 	{
 		for (row = 0; row < 3; row++)
 			mat3[col][row] = num++;
 	}
-	num = 1; // ´ÙÀ½ Ãâ·ÂÀ» À§ÇØ 1·Î ÃÊ±âÈ­
+	num = 1; // ë‹¤ìŒ ì¶œë ¥ì„ ìœ„í•´ 1ë¡œ ì´ˆê¸°í™”
 
 	for (col = 0; col < 5; col++)
 	{
@@ -39,7 +39,7 @@ int main(void)
 	return 0;
 }
 
-void mat9(int(*arr)[3]) // ¹è¿­ È¸Àü ¹× Ãâ·Â ÇÔ¼ö
+void mat9(int(*arr)[3]) // ë°°ì—´ íšŒì „ ë° ì¶œë ¥ í•¨ìˆ˜
 {
 	int ary[3][3];
 	int col, row;
@@ -47,13 +47,13 @@ void mat9(int(*arr)[3]) // ¹è¿­ È¸Àü ¹× Ãâ·Â ÇÔ¼ö
 	for (col = 0; col < 3; col++)
 	{
 		for (row = 0; row < 3; row++)
-			ary[col][row] = arr[col][row]; // ¹è¿­ º¹»ç
+			ary[col][row] = arr[col][row]; // ë°°ì—´ ë³µì‚¬
 	}
 
 	for (col = 0; col < 3; col++)
 	{
 		for (row = 0; row < 3; row++)
-			arr[col][row] = ary[row][2 - col];	// È¸Àü
+			arr[col][row] = ary[row][2 - col];	// íšŒì „
 	}
 
 	cout << endl;
@@ -61,7 +61,7 @@ void mat9(int(*arr)[3]) // ¹è¿­ È¸Àü ¹× Ãâ·Â ÇÔ¼ö
 	for (col = 0; col < 3; col++)
 	{
 		for (row = 0; row < 3; row++)
-			cout << " " << arr[col][row] << "  "; // Ãâ·Â
+			cout << " " << arr[col][row] << "  "; // ì¶œë ¥
 		cout << endl << endl;
 	}
 }
