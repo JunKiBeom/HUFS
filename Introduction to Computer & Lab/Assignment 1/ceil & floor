@@ -22,4 +22,4 @@ int main()
 	printf("x(올림)		=	%.3lf\n\n", y/1000);
 
 	printf("201703091 전기범\n");
-
+}
