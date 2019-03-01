@@ -1,12 +1,12 @@
 #include <iostream>
 using namespace std;
 
-class Complex // º¹¼Ò¼ö Å¬·¡½º
+class Complex // ë³µì†Œìˆ˜ í´ë˜ìŠ¤
 {
 private:
-	int re, im; // ½Ç¼ö, Çã¼ö
+	int re, im; // ì‹¤ìˆ˜, í—ˆìˆ˜
 public:
-	friend Complex add(Complex a1, Complex a2); // ÇÁ·»µå ÇÔ¼ö ¼±¾ğ, µÎ °´Ã¼ ¼±¾ğ
+	friend Complex add(Complex a1, Complex a2); // í”„ë Œë“œ í•¨ìˆ˜ ì„ ì–¸, ë‘ ê°ì²´ ì„ ì–¸
 	Complex();
 	Complex(double r);
 	Complex(double r, double i);
@@ -31,14 +31,14 @@ void Complex::output()
 {
 	cout << re << " + " << im << "i" << endl;
 }
-Complex add(Complex a1, Complex a2) // ÇÁ·»µå ÇÔ¼ö Á¤ÀÇ
+Complex add(Complex a1, Complex a2) // í”„ë Œë“œ í•¨ìˆ˜ ì •ì˜
 {
-	return Complex(a1.re + a2.re, a1.im + a2.im); // ½Ç¼öºÎ, Çã¼öºÎ µû·Î °è»ê ÈÄ °ª ¹İÈ¯
+	return Complex(a1.re + a2.re, a1.im + a2.im); // ì‹¤ìˆ˜ë¶€, í—ˆìˆ˜ë¶€ ë”°ë¡œ ê³„ì‚° í›„ ê°’ ë°˜í™˜
 }
 
 int main()
 {
 	Complex c1(4, 6), c2(5, 8);
-	Complex c3 = add(c1, c2); // °è»ê
-	c3.output(); // Ãâ·Â
+	Complex c3 = add(c1, c2); // ê³„ì‚°
+	c3.output(); // ì¶œë ¥
 }
