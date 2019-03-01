@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
 
-class Company // È¸»ç Å¬·¡½º
+class Company // íšŒì‚¬ í´ë˜ìŠ¤
 {
 private:
 	int sales, profit;
-	friend void sub(Company& c); // ÇÁ·»µå ¼±¾ğ
+	friend void sub(Company& c); // í”„ë Œë“œ ì„ ì–¸
 public:
 	Company();
 };
@@ -16,7 +16,7 @@ Company::Company()
 }
 void sub(Company& c)
 {
-	cout << "profit = " << c.profit << endl; // subÇÔ¼ö´Â CompanyÀÇ privateºÎºĞ¿¡ Á¢±Ù °¡´É
+	cout << "profit = " << c.profit << endl; // subí•¨ìˆ˜ëŠ” Companyì˜ privateë¶€ë¶„ì— ì ‘ê·¼ ê°€ëŠ¥
 }
 
 int main()
