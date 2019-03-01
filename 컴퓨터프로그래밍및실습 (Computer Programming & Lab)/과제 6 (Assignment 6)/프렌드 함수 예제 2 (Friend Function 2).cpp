@@ -3,9 +3,9 @@ using namespace std;
 
 class Date
 {
-	friend bool equals(Date d1, Date d2); // ÇÁ·»µå ÇÔ¼ö ¼±¾ğ
+	friend bool equals(Date d1, Date d2); // í”„ë Œë“œ í•¨ìˆ˜ ì„ ì–¸
 private:
-	int year, month, day; // ³â,¿ù, ÀÏ
+	int year, month, day; // ë…„,ì›”, ì¼
 public:
 	Date(int y, int m, int d);
 };
@@ -18,7 +18,7 @@ Date::Date(int y, int m, int d)
 
 bool equals(Date d1, Date d2)
 {
-	return d1.year == d2.year&&d1.month == d2.month&&d1.day == d2.day; // µÎ ³¯Â¥°¡ °°À¸¸é 1 ¾Æ´Ï¸é 0 ¹İÈ¯
+	return d1.year == d2.year&&d1.month == d2.month&&d1.day == d2.day; // ë‘ ë‚ ì§œê°€ ê°™ìœ¼ë©´ 1 ì•„ë‹ˆë©´ 0 ë°˜í™˜
 }
 
 int main()
@@ -26,7 +26,7 @@ int main()
 	Date d1(1975, 5, 22), d2(2002, 8, 12);
 
 	if (equals(d1, d2) == 1)
-		cout << "µÎ ³¯Â¥´Â °°´Ù!" << endl;
+		cout << "ë‘ ë‚ ì§œëŠ” ê°™ë‹¤!" << endl;
 	else
-		cout << "µÎ ³¯Â¥´Â ´Ù¸£´Ù!" << endl;
+		cout << "ë‘ ë‚ ì§œëŠ” ë‹¤ë¥´ë‹¤!" << endl;
 }
