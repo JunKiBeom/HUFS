@@ -12,13 +12,13 @@ int main()
 	pi = (int *)10000;
 	pd = (double *)10000;
 
-	cout << "Áõ°¡ Àü pc = " << (void *)pc << " pi = " << pi << " pd = " << pd << endl;
+	cout << "ÃÃµÂ°Â¡ Ã€Ã¼ pc = " << (void *)pc << " pi = " << pi << " pd = " << pd << endl;
 
 	pc++;
 	pi++;
 	pd++;
 
-	cout << "Áõ°¡ ÈÄ pc = " << (void *)pc << " pi = " << pi << " pd = " << pd << endl;
+	cout << "ÃÃµÂ°Â¡ ÃˆÃ„ pc = " << (void *)pc << " pi = " << pi << " pd = " << pd << endl;
 
 	return 0;
 
