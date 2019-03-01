@@ -1,20 +1,20 @@
 #include <iostream>
 using namespace std;
 
-class Vector // º¤ÅÍ Å¬·¡½º
+class Vector // ë²¡í„° í´ë˜ìŠ¤
 {
-	friend Vector operator*(Vector& v, double alpha); // Àü¿ª ÇÔ¼ö·Î ¿¬»êÀÚ ÇÔ¼ö ¼±¾ğ
+	friend Vector operator*(Vector& v, double alpha); // ì „ì—­ í•¨ìˆ˜ë¡œ ì—°ì‚°ì í•¨ìˆ˜ ì„ ì–¸
 	friend Vector operator*(double alpha, Vector& v); 
 private:
 	double x, y;
 public:
-	Vector(double xvalue = 0.0, double yvalue = 0.0) :x(xvalue), y(yvalue){} // ±âº» ÃÊ±âÈ­
-	void display() // Ãâ·Â
+	Vector(double xvalue = 0.0, double yvalue = 0.0) :x(xvalue), y(yvalue){} // ê¸°ë³¸ ì´ˆê¸°í™”
+	void display() // ì¶œë ¥
 	{
 		cout << "(" << x << "," << y << ")" << endl;
 	}
 };
-Vector operator*(Vector& v, double alpha) // *¿¬»êÀÚ ÇÔ¼ö Á¤ÀÇ
+Vector operator*(Vector& v, double alpha) // *ì—°ì‚°ì í•¨ìˆ˜ ì •ì˜
 {
 	return Vector(alpha*v.x, alpha*v.y);
 }
