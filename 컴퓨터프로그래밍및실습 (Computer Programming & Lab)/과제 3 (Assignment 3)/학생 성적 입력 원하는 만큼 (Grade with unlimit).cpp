@@ -1,8 +1,8 @@
 #include <iostream>
-#include <cstring> // strcmp»ç¿ëÀ» À§ÇÑ Çì´õ
+#include <cstring> // strcmpì‚¬ìš©ì„ ìœ„í•œ í—¤ë”
 using namespace std;
 
-struct student // ÇĞ»ı ±¸Á¶Ã¼
+struct student // í•™ìƒ êµ¬ì¡°ì²´
 {
 	char*name;
 	int math[2];
@@ -13,15 +13,15 @@ struct student // ÇĞ»ı ±¸Á¶Ã¼
 
 int  main()
 {
-	int count = 0; // ¸î ¹ø µ¹¾Ò´ÂÁö Ä«¿îÆ®
-	struct student *arr = 0; // ±¸Á¶Ã¼ Æ÷ÀÎÅÍ
-	struct student *temp = 0; // ÀÓ½Ã ÀúÀå °ø°£
+	int count = 0; // ëª‡ ë²ˆ ëŒì•˜ëŠ”ì§€ ì¹´ìš´íŠ¸
+	struct student *arr = 0; // êµ¬ì¡°ì²´ í¬ì¸í„°
+	struct student *temp = 0; // ì„ì‹œ ì €ì¥ ê³µê°„
 
 	for (int i = 1;; i++)
 	{
-		arr = new student[i]; // iÀÇ Å©±â¸¸Å­ µ¿Àû ÇÒ´ç
+		arr = new student[i]; // iì˜ í¬ê¸°ë§Œí¼ ë™ì  í• ë‹¹
 
-		if (i > 1) // arr¿¡ tempÀÇ °ª ³Ö±â
+		if (i > 1) // arrì— tempì˜ ê°’ ë„£ê¸°
 			for (int j = 0; j < i - 1; j++)
 			{
 				arr[j].name = temp[j].name;
@@ -33,9 +33,9 @@ int  main()
 				arr[j].engGrade = temp[j].engGrade;
 			}
 
-		temp = new student[i]; // iÀÇ Å©±â¸¸Å­ µ¿Àû ÇÒ´ç
+		temp = new student[i]; // iì˜ í¬ê¸°ë§Œí¼ ë™ì  í• ë‹¹
 
-		if (i > 1) // temp¿¡ arr°ª ³Ö±â
+		if (i > 1) // tempì— arrê°’ ë„£ê¸°
 			for (int j = 0; j < i - 1; j++)
 			{
 				temp[j].name = arr[j].name;
@@ -47,25 +47,25 @@ int  main()
 				temp[j].engGrade = arr[j].engGrade;
 			}
 
-		int credit[2] = { 0 }; // ¼ºÀû ÀúÀå ¹è¿­
-		arr[i - 1].name = new char[100];// ÇĞ»ı ÀÌ¸§ ÃÖ´ë 100Ä­À¸·Î µ¿ÀûÇÒ´ç
+		int credit[2] = { 0 }; // ì„±ì  ì €ì¥ ë°°ì—´
+		arr[i - 1].name = new char[100];// í•™ìƒ ì´ë¦„ ìµœëŒ€ 100ì¹¸ìœ¼ë¡œ ë™ì í• ë‹¹
 		cin >> arr[i - 1].name;
 
-		if (!strcmp(arr[i - 1].name, "null")) // nullÀÌ ÀÔ·ÂµÇ¸é for¹® Á¾·á
+		if (!strcmp(arr[i - 1].name, "null")) // nullì´ ì…ë ¥ë˜ë©´ forë¬¸ ì¢…ë£Œ
 			break;
 
 		for (int j = 0; j < 2; j++)
 		{
-			cin >> arr[i - 1].math[j];// ¼öÇĞ ¼ºÀû Áß°£ ±â¸» ¼øÀ¸·Î ÀÔ·Â
-			credit[0] += arr[i - 1].math[j]; // 0¹ø ¹è¿­¿¡ ¼öÇĞ ¼ºÀû ÇÕ ÀúÀå
+			cin >> arr[i - 1].math[j];// ìˆ˜í•™ ì„±ì  ì¤‘ê°„ ê¸°ë§ ìˆœìœ¼ë¡œ ì…ë ¥
+			credit[0] += arr[i - 1].math[j]; // 0ë²ˆ ë°°ì—´ì— ìˆ˜í•™ ì„±ì  í•© ì €ì¥
 		}
 		for (int j = 0; j < 2; j++)
 		{
-			cin >> arr[i - 1].eng[j]; // ¿µ¾î ¼ºÀû Áß°£ ±â¸» ¼øÀ¸·Î ÀÔ·Â
-			credit[1] += arr[i - 1].eng[j]; // 1¹ø ¹è¿­¿¡ ¿µ¾î ¼ºÀû ÇÕ ÀúÀå
+			cin >> arr[i - 1].eng[j]; // ì˜ì–´ ì„±ì  ì¤‘ê°„ ê¸°ë§ ìˆœìœ¼ë¡œ ì…ë ¥
+			credit[1] += arr[i - 1].eng[j]; // 1ë²ˆ ë°°ì—´ì— ì˜ì–´ ì„±ì  í•© ì €ì¥
 		}
 
-		// temp¿¡ arr°ª ³Ö±â
+		// tempì— arrê°’ ë„£ê¸°
 		temp[i - 1].name = arr[i - 1].name;
 		temp[i - 1].math[0] = arr[i - 1].math[0];
 		temp[i - 1].math[1] = arr[i - 1].math[1];
@@ -76,7 +76,7 @@ int  main()
 
 		for (int n = 0; n < 2; n++)
 		{
-			switch (n) // ¼öÇĞ = 0, ¿µ¾î = 1 ±¸ºĞ
+			switch (n) // ìˆ˜í•™ = 0, ì˜ì–´ = 1 êµ¬ë¶„
 			{
 			case 0:
 				if (credit[0] >= 180)
@@ -134,13 +134,13 @@ int  main()
 			}
 
 		}
-		count++; // Ä«¿îÆ® Áõ°¡
+		count++; // ì¹´ìš´íŠ¸ ì¦ê°€
 	}
-	for (int i = 0; i < count; i++) // Ä«¿îÆ® ¸¸Å­¸¸ for¹® ¹İº¹
+	for (int i = 0; i < count; i++) // ì¹´ìš´íŠ¸ ë§Œí¼ë§Œ forë¬¸ ë°˜ë³µ
 	{
-		cout << arr[i].name << " " << temp[i].mathGrade << " " << temp[i].engGrade << endl; // Ãâ·Â
-		delete[] arr[i].name; // Ãâ·ÂÇßÀ¸¸é ¹İ³³
+		cout << arr[i].name << " " << temp[i].mathGrade << " " << temp[i].engGrade << endl; // ì¶œë ¥
+		delete[] arr[i].name; // ì¶œë ¥í–ˆìœ¼ë©´ ë°˜ë‚©
 	}
-	delete[] arr; // ½ÇÇà ³¡³ª¸é ¹İ³³
-	delete[] temp; // ½ÇÇà ³¡³ª¸é ¹İ³³
+	delete[] arr; // ì‹¤í–‰ ëë‚˜ë©´ ë°˜ë‚©
+	delete[] temp; // ì‹¤í–‰ ëë‚˜ë©´ ë°˜ë‚©
 }
