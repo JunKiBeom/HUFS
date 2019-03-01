@@ -17,17 +17,17 @@ int main()
 	clock_t fever_e=0, superfever_e, ultrafever_e;
 
 intro:
-	score = 0, plus = +10, combo = 0; //ÃÊ±âÈ­
+	score = 0, plus = +10, combo = 0; //ì´ˆê¸°í™”
 
-	printf("È­¸é¿¡ X°¡ Ç¥½ÃµÇ¸é 1À», O°¡ Ç¥½ÃµÇ¸é 2¸¦ ´©¸£¼¼¿ä.\n");
+	printf("í™”ë©´ì— Xê°€ í‘œì‹œë˜ë©´ 1ì„, Oê°€ í‘œì‹œë˜ë©´ 2ë¥¼ ëˆ„ë¥´ì„¸ìš”.\n");
 	Sleep(500);
-	printf("°ÔÀÓÀ» ½ÃÀÛÇÕ´Ï´Ù. ÁØºñ°¡ µÇ¾úÀ¸¸é 1À» ´©¸£¼¼¿ä.");
+	printf("ê²Œì„ì„ ì‹œì‘í•©ë‹ˆë‹¤. ì¤€ë¹„ê°€ ë˜ì—ˆìœ¼ë©´ 1ì„ ëˆ„ë¥´ì„¸ìš”.");
 	scanf("%d", &start_num);
 
 	if (start_num == 1)
 		printf("\n");
 	else
-		goto intro; //ÀçÀÔ·Â
+		goto intro; //ì¬ì…ë ¥
 
 	start = clock();
 	for (int num=1;; num++)
@@ -52,10 +52,10 @@ intro:
 		remain_t = (30000.0 - (end - start))/1000.0;
 
 		if (game_count == 0)
-			printf("(³²Àº½Ã°£ : %.3fÃÊ . ´ç½ÅÀÇ Á¡¼ö : %d) ÀÔ·ÂÀº?", remain_t, score);
+			printf("(ë‚¨ì€ì‹œê°„ : %.3fì´ˆ . ë‹¹ì‹ ì˜ ì ìˆ˜ : %d) ì…ë ¥ì€?", remain_t, score);
 
 		else
-		printf("(³²Àº½Ã°£ : %.3fÃÊ . ´ç½ÅÀÇ Á¡¼ö : %d (+%d)) ÀÔ·ÂÀº?",remain_t, score, plus+combo-1);
+		printf("(ë‚¨ì€ì‹œê°„ : %.3fì´ˆ . ë‹¹ì‹ ì˜ ì ìˆ˜ : %d (+%d)) ì…ë ¥ì€?",remain_t, score, plus+combo-1);
 		scanf(" %d", &answer);
 
 			if (ANSWER == answer)
@@ -82,23 +82,23 @@ intro:
 	}
 
 	if (score > lscore)
-		printf("ÃàÇÏÇÕ´Ï´Ù! ÃÖ°í±â·ÏÀÔ´Ï´Ù!\n");
+		printf("ì¶•í•˜í•©ë‹ˆë‹¤! ìµœê³ ê¸°ë¡ì…ë‹ˆë‹¤!\n");
 
-	printf("Á¡¼ö´Â %dÁ¡ ÀÔ´Ï´Ù\n\n", score);
+	printf("ì ìˆ˜ëŠ” %dì  ì…ë‹ˆë‹¤\n\n", score);
 
 	if (score>lscore)
-		lscore = score; //ÀÌÀü Á¡¼ö ÀúÀå
+		lscore = score; //ì´ì „ ì ìˆ˜ ì €ì¥
 
 	while (1)
 	{
-		printf("°ÔÀÓÀ» °è¼Ó ÇÏ½Ã°Ú½À´Ï±î? (Y/N)");
+		printf("ê²Œì„ì„ ê³„ì† í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (Y/N)");
 		scanf(" %c", &check);
 
 		if (check == 'Y')
 			goto intro;
 		else if (check == 'N')
 		{
-			printf("ÃÖ°íÁ¡¼ö´Â %dÁ¡ ÀÔ´Ï´Ù..\n°ÔÀÓÀ» Á¾·áÇÕ´Ï´Ù.\n", lscore);
+			printf("ìµœê³ ì ìˆ˜ëŠ” %dì  ì…ë‹ˆë‹¤..\nê²Œì„ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.\n", lscore);
 			break;
 		}
 	}
