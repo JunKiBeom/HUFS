@@ -11,7 +11,7 @@ int main()
 	check(str);
 }
 
-void check(char *ary) // ¹®ÀÚ °¹¼ö È®ÀÎ ÇÔ¼ö
+void check(char *ary) // ë¬¸ìž ê°¯ìˆ˜ í™•ì¸ í•¨ìˆ˜
 {
 	int i;
 	char alpha[26];
@@ -23,7 +23,7 @@ void check(char *ary) // ¹®ÀÚ °¹¼ö È®ÀÎ ÇÔ¼ö
 		num[i] = 0;
 	}
 
-	for (i = 0; ary[i] != 0; i++) // ¹®ÀÚ¿­ ³¡±îÁö °¢°¢ È®ÀÎ
+	for (i = 0; ary[i] != 0; i++) // ë¬¸ìžì—´ ëê¹Œì§€ ê°ê° í™•ì¸
 	{
 		if ((ary[i] >= 'a') && (ary[i] <= 'z'))
 			num[ary[i] - 'a']++;
