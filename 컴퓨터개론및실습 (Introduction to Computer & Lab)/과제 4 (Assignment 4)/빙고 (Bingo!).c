@@ -8,27 +8,27 @@ void checkbingo();
 void endbingo();
 void cominput();
 
-int userbingo[25], combingo[25], usersave[25] = { 0 }, comsave[25] = { 0 }; // »ç¿ëÀÚ ºù°í, ÄÄÇ»ÅÍ ºù°í, ¼ıÀÚ ÀúÀå
-int index1 = 0, index2 = 0; // for¹® º¯¼ö
-int usernum = 0, comnum = 0; // usernum = »ç¿ëÀÚÀÇ ÀÔ·Â, comnum = ÄÄÇ»ÅÍ°¡ ºÎ¸£´Â ¼ıÀÚ
-int usercount = 0, comcount = 0; // ºù°í Ä«¿îÆ®
-int usersum[12] = { 0 }, comsum[12] = { 0 }; // ºù°í°¹¼ö È®ÀÎ
-int userInput[25] = { 0 }, comInput[25] = { 0 }; // ºù°íÄ«¿îÆ®¸¦ À§ÇØ °è»êµÇ´Â ¹è¿­
-int user = 0, com = 0; // for¹® µ¿ÀÛ
-int game = 1, num=1, loop=0; // while¹® µ¿ÀÛ game
-int check[25] = { 0 }; // ÀÔ·Â Áßº¹ È®ÀÎ
+int userbingo[25], combingo[25], usersave[25] = { 0 }, comsave[25] = { 0 }; // ì‚¬ìš©ì ë¹™ê³ , ì»´í“¨í„° ë¹™ê³ , ìˆ«ì ì €ì¥
+int index1 = 0, index2 = 0; // forë¬¸ ë³€ìˆ˜
+int usernum = 0, comnum = 0; // usernum = ì‚¬ìš©ìì˜ ì…ë ¥, comnum = ì»´í“¨í„°ê°€ ë¶€ë¥´ëŠ” ìˆ«ì
+int usercount = 0, comcount = 0; // ë¹™ê³  ì¹´ìš´íŠ¸
+int usersum[12] = { 0 }, comsum[12] = { 0 }; // ë¹™ê³ ê°¯ìˆ˜ í™•ì¸
+int userInput[25] = { 0 }, comInput[25] = { 0 }; // ë¹™ê³ ì¹´ìš´íŠ¸ë¥¼ ìœ„í•´ ê³„ì‚°ë˜ëŠ” ë°°ì—´
+int user = 0, com = 0; // forë¬¸ ë™ì‘
+int game = 1, num=1, loop=0; // whileë¬¸ ë™ì‘ game
+int check[25] = { 0 }; // ì…ë ¥ ì¤‘ë³µ í™•ì¸
 
 int main()
 {
 	srand((unsigned int)time(NULL));
-	int count = rand(); // ¹ø°¥¾Æ °¡¸é¼­ ÀÔ·ÂÀ» ¹Ş±â À§ÇÑ count, ´©°¡ ½ÃÀÛÀÎÁö ·£´ı
+	int count = rand(); // ë²ˆê°ˆì•„ ê°€ë©´ì„œ ì…ë ¥ì„ ë°›ê¸° ìœ„í•œ count, ëˆ„ê°€ ì‹œì‘ì¸ì§€ ëœë¤
 
 	checkboard();
 
 	while (game)
 	{
 		system("cls");
-		printf("  < Your Bingo > \n"); // »ç¿ëÀÚ ºù°íÆÇ Ãâ·Â
+		printf("  < Your Bingo > \n"); // ì‚¬ìš©ì ë¹™ê³ íŒ ì¶œë ¥
 		printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 1, 6, 6, 6, 6, 6, 6, 22, 6, 6, 6, 6, 6, 6, 22, 6, 6, 6, 6, 6, 6, 22, 6, 6, 6, 6, 6, 6, 22, 6, 6, 6, 6, 6, 6, 2);
 
 		for (index1 = 0; index1 < 25; index1++)
@@ -54,7 +54,7 @@ int main()
 		printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 3, 6, 6, 6, 6, 6, 6, 21, 6, 6, 6, 6, 6, 6, 21, 6, 6, 6, 6, 6, 6, 21, 6, 6, 6, 6, 6, 6, 21, 6, 6, 6, 6, 6, 6, 4);
 
 		printf("\n\n");
-		printf(" < Computer Bingo > \n"); // ÄÄÇ»ÅÍ ºù°íÆÇ Ãâ·Â
+		printf(" < Computer Bingo > \n"); // ì»´í“¨í„° ë¹™ê³ íŒ ì¶œë ¥
 		printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 1, 6, 6, 6, 6, 6, 6, 22, 6, 6, 6, 6, 6, 6, 22, 6, 6, 6, 6, 6, 6, 22, 6, 6, 6, 6, 6, 6, 22, 6, 6, 6, 6, 6, 6, 2);
 
 		for (index1 = 0; index1 < 25; index1++)
@@ -83,7 +83,7 @@ int main()
 
 		checkbingo();
 
-		if (count % 2 == 0) // ¹ø°¥¾Æ¼­ ÀÔ·Â
+		if (count % 2 == 0) // ë²ˆê°ˆì•„ì„œ ì…ë ¥
 		{
 			while (1)
 			{
@@ -104,7 +104,7 @@ int main()
 	}
 }
 
-void checkboard() // ºù°í º¸µåÆÇ Áßº¹ Ã¼Å©
+void checkboard() // ë¹™ê³  ë³´ë“œíŒ ì¤‘ë³µ ì²´í¬
 {
 	srand((unsigned int)time(NULL));
 
@@ -129,9 +129,9 @@ void checkboard() // ºù°í º¸µåÆÇ Áßº¹ Ã¼Å©
 	}
 }
 
-void cominput() // ÀÔ·Â Áßº¹ Ã¼Å©
+void cominput() // ì…ë ¥ ì¤‘ë³µ ì²´í¬
 {
-	for (index1 = 0; index1 < 25; index1++) // ÄÄÇ»ÅÍ Áßº¹
+	for (index1 = 0; index1 < 25; index1++) // ì»´í“¨í„° ì¤‘ë³µ
 	{
 		while (num)
 		{
@@ -161,7 +161,7 @@ void cominput() // ÀÔ·Â Áßº¹ Ã¼Å©
 			}
 	}
 
-	while (loop<25) // ¹è¿­ °ª ¹Ş±â
+	while (loop<25) // ë°°ì—´ ê°’ ë°›ê¸°
 	{
 		int *ptr = &check[loop];
 		if (*ptr == 0)
@@ -176,9 +176,9 @@ void cominput() // ÀÔ·Â Áßº¹ Ã¼Å©
 	printf("Computer Number : %d\n", comnum);
 }
 
-void checkbingo() // ºù°í¿©ºÎ Ã¼Å©
+void checkbingo() // ë¹™ê³ ì—¬ë¶€ ì²´í¬
 {
-	// À¯Àú ºù°í Ä«¿îÆ®
+	// ìœ ì € ë¹™ê³  ì¹´ìš´íŠ¸
 	for (user; user < 25; user++)
 	{
 		if (user >= 25)
@@ -195,26 +195,26 @@ void checkbingo() // ºù°í¿©ºÎ Ã¼Å©
 			}
 	}
 	usercount = 0;
-	// °¡·Î
+	// ê°€ë¡œ
 	usersum[0] = userInput[0] + userInput[1] + userInput[2] + userInput[3] + userInput[4];
 	usersum[1] = userInput[5] + userInput[6] + userInput[7] + userInput[8] + userInput[9];
 	usersum[2] = userInput[10] + userInput[11] + userInput[12] + userInput[13] + userInput[14];
 	usersum[3] = userInput[15] + userInput[16] + userInput[17] + userInput[18] + userInput[29];
 	usersum[4] = userInput[20] + userInput[21] + userInput[22] + userInput[23] + userInput[24];
-	// ¼¼·Î
+	// ì„¸ë¡œ
 	usersum[5] = userInput[0] + userInput[5] + userInput[10] + userInput[15] + userInput[20];
 	usersum[6] = userInput[1] + userInput[6] + userInput[11] + userInput[16] + userInput[21];
 	usersum[7] = userInput[2] + userInput[7] + userInput[12] + userInput[17] + userInput[22];
 	usersum[8] = userInput[3] + userInput[8] + userInput[13] + userInput[18] + userInput[23];
 	usersum[9] = userInput[4] + userInput[9] + userInput[14] + userInput[19] + userInput[24];
-	// ´ë°¢¼±
+	// ëŒ€ê°ì„ 
 	usersum[10] = userInput[0] + userInput[6] + userInput[12] + userInput[18] + userInput[24];
 	usersum[11] = userInput[4] + userInput[8] + userInput[12] + userInput[16] + userInput[20];
 
 	for (index1 = 0; index1 < 12; index1++)
 		if (usersum[index1] == 0) usercount++;
 
-	// ÄÄÇ»ÅÍ ºù°í Ä«¿îÆ®
+	// ì»´í“¨í„° ë¹™ê³  ì¹´ìš´íŠ¸
 	for (com; com < 25; com++)
 	{
 		if (com >= 25)
@@ -231,26 +231,26 @@ void checkbingo() // ºù°í¿©ºÎ Ã¼Å©
 			}
 	}
 	comcount = 0;
-	// °¡·Î
+	// ê°€ë¡œ
 	comsum[0] = comInput[0] + comInput[1] + comInput[2] + comInput[3] + comInput[4];
 	comsum[1] = comInput[5] + comInput[6] + comInput[7] + comInput[8] + comInput[9];
 	comsum[2] = comInput[10] + comInput[11] + comInput[12] + comInput[13] + comInput[14];
 	comsum[3] = comInput[15] + comInput[16] + comInput[17] + comInput[18] + comInput[19];
 	comsum[4] = comInput[20] + comInput[21] + comInput[22] + comInput[23] + comInput[24];
-	// ¼¼·Î
+	// ì„¸ë¡œ
 	comsum[5] = comInput[0] + comInput[5] + comInput[10] + comInput[15] + comInput[20];
 	comsum[6] = comInput[1] + comInput[6] + comInput[11] + comInput[16] + comInput[21];
 	comsum[7] = comInput[2] + comInput[7] + comInput[12] + comInput[17] + comInput[22];
 	comsum[8] = comInput[3] + comInput[8] + comInput[13] + comInput[18] + comInput[23];
 	comsum[9] = comInput[4] + comInput[9] + comInput[14] + comInput[19] + comInput[24];
-	// ´ë°¢¼±
+	// ëŒ€ê°ì„ 
 	comsum[10] = comInput[0] + comInput[6] + comInput[12] + comInput[18] + comInput[24];
 	comsum[11] = comInput[4] + comInput[8] + comInput[12] + comInput[16] + comInput[20];
 
 	for (index1 = 0; index1 < 12; index1++)
 		if (comsum[index1] == 0) comcount++;
 
-	// Ä«¿îÆ®
+	// ì¹´ìš´íŠ¸
 	//printf("usercount = %d\n", usercount);
 	//printf("comcount = %d\n", comcount);
 
@@ -277,9 +277,9 @@ void checkbingo() // ºù°í¿©ºÎ Ã¼Å©
 	}
 }
 
-void endbingo() // °ÔÀÓ ³¡³ª°í °á°ú Ãâ·Â
+void endbingo() // ê²Œì„ ëë‚˜ê³  ê²°ê³¼ ì¶œë ¥
 {
-	printf("  < Your Bingo > \n"); // »ç¿ëÀÚ ºù°íÆÇ Ãâ·Â
+	printf("  < Your Bingo > \n"); // ì‚¬ìš©ì ë¹™ê³ íŒ ì¶œë ¥
 	printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 1, 6, 6, 6, 6, 6, 6, 22, 6, 6, 6, 6, 6, 6, 22, 6, 6, 6, 6, 6, 6, 22, 6, 6, 6, 6, 6, 6, 22, 6, 6, 6, 6, 6, 6, 2);
 
 	for (index1 = 0; index1 < 25; index1++)
@@ -303,7 +303,7 @@ void endbingo() // °ÔÀÓ ³¡³ª°í °á°ú Ãâ·Â
 	printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 3, 6, 6, 6, 6, 6, 6, 21, 6, 6, 6, 6, 6, 6, 21, 6, 6, 6, 6, 6, 6, 21, 6, 6, 6, 6, 6, 6, 21, 6, 6, 6, 6, 6, 6, 4);
 
 	printf("\n\n");
-	printf(" < Computer Bingo > \n"); // ÄÄÇ»ÅÍ ºù°íÆÇ Ãâ·Â
+	printf(" < Computer Bingo > \n"); // ì»´í“¨í„° ë¹™ê³ íŒ ì¶œë ¥
 	printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 1, 6, 6, 6, 6, 6, 6, 22, 6, 6, 6, 6, 6, 6, 22, 6, 6, 6, 6, 6, 6, 22, 6, 6, 6, 6, 6, 6, 22, 6, 6, 6, 6, 6, 6, 2);
 
 	for (index1 = 0; index1 < 25; index1++)
