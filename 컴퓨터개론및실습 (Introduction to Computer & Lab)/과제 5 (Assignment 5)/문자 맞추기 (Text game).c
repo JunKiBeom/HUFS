@@ -9,12 +9,12 @@ int main()
 	int len = 0, ncount = 0;
 	int save1 = 0 , save2 = 0;
 
-	while (1) // ´ë¹®ÀÚ ÀÔ·Â ¹Ş¾ÒÀ» °æ¿ì ´Ù½Ã ÀÔ·Â
+	while (1) // ëŒ€ë¬¸ì ì…ë ¥ ë°›ì•˜ì„ ê²½ìš° ë‹¤ì‹œ ì…ë ¥
 	{
 		int temp = 0;
 		printf("Word?\t");
-		fgets(first, 100, stdin); // ±æÀÌ ÁöÁ¤
-		first[strlen(first) - 1] = '\0'; // \nÀ» \0À¸·Î ¸¸µé±â
+		fgets(first, 100, stdin); // ê¸¸ì´ ì§€ì •
+		first[strlen(first) - 1] = '\0'; // \nì„ \0ìœ¼ë¡œ ë§Œë“¤ê¸°
 		for (int index = 0; index < strlen(first); index++)
 		{
 			if (isupper(first[index]))
@@ -24,19 +24,19 @@ int main()
 				break;
 			}
 		}
-		if (!temp) // ¼Ò¹®ÀÚÀÌ¸é ¹İº¹¹® Å»Ãâ
+		if (!temp) // ì†Œë¬¸ìì´ë©´ ë°˜ë³µë¬¸ íƒˆì¶œ
 			break;
 	} //
 
-	while (1) // ÀüÃ¼ ¹İº¹
+	while (1) // ì „ì²´ ë°˜ë³µ
 	{
 		int index1 = 0, index2 = 0;
-		while (1) // ´ë¹®ÀÚ ÀÔ·Â ¹Ş¾ÒÀ» °æ¿ì ´Ù½Ã ÀÔ·Â
+		while (1) // ëŒ€ë¬¸ì ì…ë ¥ ë°›ì•˜ì„ ê²½ìš° ë‹¤ì‹œ ì…ë ¥
 		{
 			int temp = 0;
 			printf("Word?\t");
-			fgets(second, 100, stdin); // ±æÀÌ ÁöÁ¤
-			second[strlen(second) - 1] = '\0'; // \nÀ» \0À¸·Î ¸¸µé±â
+			fgets(second, 100, stdin); // ê¸¸ì´ ì§€ì •
+			second[strlen(second) - 1] = '\0'; // \nì„ \0ìœ¼ë¡œ ë§Œë“¤ê¸°
 
 			for (int index = 0; index < strlen(second); index++)
 			{
@@ -47,15 +47,15 @@ int main()
 					break;
 				}
 			}
-			if (!temp) // ¼Ò¹®ÀÚÀÌ¸é ¹İº¹¹® Å»Ãâ
+			if (!temp) // ì†Œë¬¸ìì´ë©´ ë°˜ë³µë¬¸ íƒˆì¶œ
 				break;
 		} // 
 
-		for (index1 = 0; index1 < strlen(first); index1++) // Ãâ·Â for¹®
+		for (index1 = 0; index1 < strlen(first); index1++) // ì¶œë ¥ forë¬¸
 		{
 			for (index2 = 0; index2 < strlen(second); index2++)
 			{
-				if ((!strcmp(first, "end")) || (!strcmp(second, "end"))) // end ÀÔ·Â½Ã Á¾·á
+				if ((!strcmp(first, "end")) || (!strcmp(second, "end"))) // end ì…ë ¥ì‹œ ì¢…ë£Œ
 				{
 					exit(1);
 					continue;
@@ -93,9 +93,9 @@ int main()
 			} //
 		} //
 		
-		printf("\n\"Next : %s /  \"\n\n", second); // ´ÙÀ½¿¡ ºñ±³ÇÒ ±ÛÀÚ º¸¿©ÁÖ±â
+		printf("\n\"Next : %s /  \"\n\n", second); // ë‹¤ìŒì— ë¹„êµí•  ê¸€ì ë³´ì—¬ì£¼ê¸°
 
-		strcpy(first, second); // first¿¡ second °ª ³ÖÀ½
+		strcpy(first, second); // firstì— second ê°’ ë„£ìŒ
 
 	}
 }
