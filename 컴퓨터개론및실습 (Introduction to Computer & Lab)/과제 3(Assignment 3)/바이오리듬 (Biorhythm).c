@@ -3,16 +3,16 @@
 #include <time.h>
 #pragma warning (disable:4996)
 
-int today_y, today_m, today_d; // ¿À´Ã ³¯Â¥¸¦ Àü¿ªº¯¼ö·Î ¹Ş±â À§ÇØ ¼³Á¤
+int today_y, today_m, today_d; // ì˜¤ëŠ˜ ë‚ ì§œë¥¼ ì „ì—­ë³€ìˆ˜ë¡œ ë°›ê¸° ìœ„í•´ ì„¤ì •
 
-#define PI 3.1415926535897932384626433832795028841971 // ÆÄÀÌ°ª
+#define PI 3.1415926535897932384626433832795028841971 // íŒŒì´ê°’
 
 
-int monthdate(int _year, int _month) // °¢ ´ŞÀÇ ÀÏ¼ö ÇÔ¼ö
+int monthdate(int _year, int _month) // ê° ë‹¬ì˜ ì¼ìˆ˜ í•¨ìˆ˜
 {
-	int monthData[] = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 }; // ¹è¿­À» ÀÌ¿ë
+	int monthData[] = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 }; // ë°°ì—´ì„ ì´ìš©
 
-	if (yoon(_year) == 1 && _month == 2) // À±³â 2¿ùÀÏ°æ¿ì 29ÀÏ·Î °ª ¹ŞÀ½
+	if (yoon(_year) == 1 && _month == 2) // ìœ¤ë…„ 2ì›”ì¼ê²½ìš° 29ì¼ë¡œ ê°’ ë°›ìŒ
 	{
 		return 29;
 	}
@@ -23,7 +23,7 @@ int monthdate(int _year, int _month) // °¢ ´ŞÀÇ ÀÏ¼ö ÇÔ¼ö
 }
 
 
-int yoon(int _year) // À±³âÇÔ¼ö À±³âÀÌ¸é1 ¾Æ´Ï¸é0ÀÇ °ª ¹Ş´Â ÇÔ¼ö
+int yoon(int _year) // ìœ¤ë…„í•¨ìˆ˜ ìœ¤ë…„ì´ë©´1 ì•„ë‹ˆë©´0ì˜ ê°’ ë°›ëŠ” í•¨ìˆ˜
 {
 	if (((_year % 4) == 0 && (_year % 100) != 0) ||
 		(_year % 400) == 0)
@@ -36,9 +36,9 @@ int yoon(int _year) // À±³âÇÔ¼ö À±³âÀÌ¸é1 ¾Æ´Ï¸é0ÀÇ °ª ¹Ş´Â ÇÔ¼ö
 
 int howManyDays(int _year, int _month, int _day)
 {
-	int days = 0; // ÀüÃ¼ ÀÏ ¼ö
+	int days = 0; // ì „ì²´ ì¼ ìˆ˜
 
-	for (int i = _year + 1; i < today_y; i++) // ¿ÃÇØ Àü ±îÁöÀÇ ÀÏ ¼ö °è»ê
+	for (int i = _year + 1; i < today_y; i++) // ì˜¬í•´ ì „ ê¹Œì§€ì˜ ì¼ ìˆ˜ ê³„ì‚°
 	{
 		if (yoon(i) == 1)
 		{
@@ -50,7 +50,7 @@ int howManyDays(int _year, int _month, int _day)
 		}
 	}
 
-	for (int i = _month + 1; i <= 12; i++) // ´Ş º°·Î Ä«¿îÆÃ
+	for (int i = _month + 1; i <= 12; i++) // ë‹¬ ë³„ë¡œ ì¹´ìš´íŒ…
 	{
 		days = days + monthdate(_year, i);
 	}
@@ -59,18 +59,18 @@ int howManyDays(int _year, int _month, int _day)
 		days = days + monthdate(today_y, i);
 	}
 
-	days = days + today_d; // ÀÏ º° Ä«¿îÆÃ
+	days = days + today_d; // ì¼ ë³„ ì¹´ìš´íŒ…
 	days = days + (monthdate(_year, _month) - _day);
 
 	return days;
 }
 
 
-int main(void) // ¸ŞÀÎÇÔ¼ö
+int main(void) // ë©”ì¸í•¨ìˆ˜
 {
 	int year, month, day;
 
-	struct tm*t; // ¿À´Ã ½Ã°£ get
+	struct tm*t; // ì˜¤ëŠ˜ ì‹œê°„ get
 	time_t timer;
 
 	timer = time(NULL);
@@ -78,9 +78,9 @@ int main(void) // ¸ŞÀÎÇÔ¼ö
 
 	today_y = t->tm_year + 1900, today_m = t->tm_mon + 1, today_d = t->tm_mday;
 
-	printf("»ı³â¿ùÀÏÀ» ÀÔ·ÂÇÏ¼¼¿ä.");
+	printf("ìƒë…„ì›”ì¼ì„ ì…ë ¥í•˜ì„¸ìš”.");
 	scanf("%d.%d.%d", &year, &month, &day);
-	printf("¿À´ÃÀº %d³â %d¿ù %dÀÏ ÀÔ´Ï´Ù.\n", today_y, today_m, today_d);
+	printf("ì˜¤ëŠ˜ì€ %dë…„ %dì›” %dì¼ ì…ë‹ˆë‹¤.\n", today_y, today_m, today_d);
 	
 	for (int i=-7; i<=14; i++)
 	{
@@ -92,9 +92,9 @@ int main(void) // ¸ŞÀÎÇÔ¼ö
 	double intel = sin((2.0*PI*days) / 33.0) * 100;
 	
 		printf("%d. %d. %d\n", today_y, today_m, today_d+i);
-		printf("½ÅÃ¼Áö¼ö: %.2f\n", physical);
-		printf("°¨Á¤Áö¼ö: %.2f\n", sens);
-		printf("Áö¼ºÁö¼ö: %.2f\n", intel);
+		printf("ì‹ ì²´ì§€ìˆ˜: %.2f\n", physical);
+		printf("ê°ì •ì§€ìˆ˜: %.2f\n", sens);
+		printf("ì§€ì„±ì§€ìˆ˜: %.2f\n", intel);
 		printf("\n");
 	}
 	return 0;
