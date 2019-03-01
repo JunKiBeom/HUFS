@@ -14,7 +14,7 @@ int main()
 	char name[10] = { 0 };
 	struct BOOK book[5] = { { 1, "c program", "Rit", "20170606" }, { 2, "calculus", "Tom", "20170606" }, { 3, "physics", "John", "20170606" }, { 4, "chemistry", "Murry", "20170606" }, { 5, "minerva", "HUFS", "20170606" } };
 	
-	while (1) // ´ë¹®ÀÚ ÀÔ·Â ¹Ş¾ÒÀ» °æ¿ì ´Ù½Ã ÀÔ·Â
+	while (1) // ëŒ€ë¬¸ì ì…ë ¥ ë°›ì•˜ì„ ê²½ìš° ë‹¤ì‹œ ì…ë ¥
 	{
 		int temp = 0;
 		printf("Tilte? \t");
@@ -28,7 +28,7 @@ int main()
 				break;
 			}
 		}
-		if (!temp) // ¼Ò¹®ÀÚÀÌ¸é ¹İº¹¹® Å»Ãâ
+		if (!temp) // ì†Œë¬¸ìì´ë©´ ë°˜ë³µë¬¸ íƒˆì¶œ
 			break;
 	} //
 
