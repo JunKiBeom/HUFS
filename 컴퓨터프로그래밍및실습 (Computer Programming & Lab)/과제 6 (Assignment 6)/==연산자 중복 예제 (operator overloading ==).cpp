@@ -1,26 +1,26 @@
 #include <iostream>
 using namespace std;
 
-class Vector // º¤ÅÍ Å¬·¡½º
+class Vector // ë²¡í„° í´ë˜ìŠ¤
 {
 private:
 	double x, y;
 public:
-	Vector(double xvalue = 0.0, double yvalue = 0.0) :x(xvalue), y(yvalue){} // ±âº» ÃÊ±âÈ­
-	void display() // Ãâ·Â
+	Vector(double xvalue = 0.0, double yvalue = 0.0) :x(xvalue), y(yvalue){} // ê¸°ë³¸ ì´ˆê¸°í™”
+	void display() // ì¶œë ¥
 	{
 		cout << "(" << x << "," << y << ")" << endl;
 	}
 	friend bool operator==(const Vector& v1, const Vector& v2);
 	friend bool operator!=(const Vector& v1, const Vector& v2);
 };
-bool operator==(const Vector& v1, const Vector& v2) // ==¿¬»êÀÚ ÇÔ¼ö Á¤ÀÇ, Àü¿ª ÇÔ¼ö·Î ±¸Çö
+bool operator==(const Vector& v1, const Vector& v2) // ==ì—°ì‚°ì í•¨ìˆ˜ ì •ì˜, ì „ì—­ í•¨ìˆ˜ë¡œ êµ¬í˜„
 {
-	return v1.x == v2.x&&v1.y == v2.y; // °°À¸¸é 1 ¹İÈ¯
+	return v1.x == v2.x&&v1.y == v2.y; // ê°™ìœ¼ë©´ 1 ë°˜í™˜
 }
 bool operator!=(const Vector& v1, const Vector& v2)
 {
-	return !(v1 == v2); // ´Ù¸£¸é 1 ¹İÈ¯
+	return !(v1 == v2); // ë‹¤ë¥´ë©´ 1 ë°˜í™˜
 }
 
 
