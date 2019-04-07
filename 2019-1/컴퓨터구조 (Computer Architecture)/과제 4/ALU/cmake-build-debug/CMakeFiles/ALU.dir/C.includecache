@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/junkibeom/OneDrive/대학/2019-1/컴퓨터구조/과제/과제 4/ALU/main.c
+stdio.h
+-
+stdlib.h
+-
+
