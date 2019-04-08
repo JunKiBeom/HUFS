@@ -95,8 +95,8 @@ void test(void)
 {
     int x,y,c,s,z;
 
-    x=0x00000000;
-    y=0xffffffff;
+    x=0x10101010;
+    y=0x01010101;
     c=9;
 
     printf("c: %d\n",c);
