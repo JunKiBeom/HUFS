@@ -16,6 +16,7 @@ snice를 이용하여 nice의 값을 변경하는것을 성공하였습니다.
    pid가 없거나 nice값이 0~40 범위 밖이면 -1 return
 
 6) snice.c를 만들어 snice(pid,nice) 호출
+   pid와 nice의 값을 argv로 받아 들여 atoi로 정수 치환.
    이때 nice의 값이 음수인지 판별 (atoi는 음수 미지원)
    따라서 argv[2][0]가 '-'이라면 음수로 판별, -1 return
 
