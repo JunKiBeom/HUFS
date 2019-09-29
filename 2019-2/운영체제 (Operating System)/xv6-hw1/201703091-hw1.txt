@@ -1,0 +1,24 @@
+gnice를 이용하여 nice의 값을 불러오는것과
+snice를 이용하여 nice의 값을 변경하는것을 성공하였습니다.
+
+해결 방법으로는
+1) proc.h에 있는 struct proc 구조체에 int nice 추가
+
+2) proc.c에 있는 allocproc에 p->nice=20 을 추가하여 nice의 기본값을 20으로 설정
+
+3) proc.c에 int getnice(int pid)함수 생성,
+   p->pid와 pid가 동일 시 p->nice의 값을 return, pid 없는경우 -1 return
+
+4) gnice.c라는 파일생성, gnice(pid)를 호출하는 코드로 Makefile에 추가 후 동작 확인
+
+5) proc.c에 int setnice(int pid, int nice)함수 생성,
+   p->pid 와 pid가 같다면 p->nice = nice, 0 return
+   pid가 없거나 nice값이 0~40 범위 밖이면 -1 return
+
+6) snice.c를 만들어 snice(pid,nice) 호출
+   이때 nice의 값이 음수인지 판별 (atoi는 음수 미지원)
+   따라서 argv[2][0]가 '-'이라면 음수로 판별, -1 return
+
+
+7) sysproc.c, syscall.c, syscall.h (gnice = 23, snice = 24)
+   defs.h, user.h, Makefile 등 함수 선언 및 함수 추가를 하였습니다.
