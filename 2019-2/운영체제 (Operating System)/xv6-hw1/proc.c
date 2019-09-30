@@ -561,6 +561,7 @@ getnice(int pid)
        return p->nice;
     }
   }
+  cprintf("***** Pid Error *****\n");
   cprintf("Pid is not in table!\n");
   release(&ptable.lock);
   return -1;
@@ -571,6 +572,7 @@ int
 setnice(int pid, int nice)
 {
   if ( (nice<0)||(nice>40) ){
+    cprintf("***** Over 40 *****\n");
     cprintf("Invalid nice (0~40)\n");
     return -1;
   }
@@ -585,6 +587,7 @@ setnice(int pid, int nice)
       return 0;
     }
   }
+  cprintf("***** Pid Error *****\n");
   cprintf("Pid is not in table!\n");
   release(&ptable.lock);
   return -1;

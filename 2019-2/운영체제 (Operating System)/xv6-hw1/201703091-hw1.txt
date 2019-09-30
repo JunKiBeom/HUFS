@@ -23,3 +23,5 @@ snice를 이용하여 nice의 값을 변경하는것을 성공하였습니다.
 
 7) sysproc.c, syscall.c, syscall.h (gnice = 23, snice = 24)
    defs.h, user.h, Makefile 등 함수 선언 및 함수 추가를 하였습니다.
+
+8) 에러가 발생하였을경우 해당 상황에 맞는 에러를 출력하도록 하였습니다.
