@@ -19,6 +19,18 @@ int main(int argc, char *argv[])
     printf(1,"Invalid nice (0~40)\nresult : -1\n");
     exit();
   }
+    
+  else if (!((argv[1][0]>=48)&&(argv[1][0]<=57))){
+    printf(1,"***** Character Input *****\n");
+    printf(1,"Invalid pid\nresult : -1\n");
+    exit();
+  }
+    
+  else if (!((argv[2][0]>=48)&&(argv[2][0]<=57))){
+    printf(1,"***** Character Input *****\n");
+    printf(1,"Invalid nice (0~40)\nresult : -1\n");
+    exit();
+  }
 
   pid = atoi (argv[1]);
   nice = atoi (argv[2]);
