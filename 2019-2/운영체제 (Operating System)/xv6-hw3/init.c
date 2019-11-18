@@ -20,6 +20,9 @@ main(void)
   dup(0);  // stderr
 
   printf(1, "Welcome to HUFS xv6 Operating System Project!!! \n");
+  printf(1, "Name: Jun, KiBeom \n");
+  printf(1, "ID: 201703091 \n\n\n");
+
   for(;;){
     printf(1, "init: starting sh\n");
     pid = fork();

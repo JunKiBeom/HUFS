@@ -99,7 +99,8 @@ int dequeue(struct semaphore *sem){
 	int i,pid;
 
 	for (i=0; i<MAX_WAITERS; i++){
-		if ((pid=sem->waiters[i])!=-1){
+		pid = sem->waiters[i];
+		if (pid!=-1){
 			sem->waiters[i]=-1;
 			return pid;
 		}

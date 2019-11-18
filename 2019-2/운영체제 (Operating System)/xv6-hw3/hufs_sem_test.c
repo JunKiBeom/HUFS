@@ -70,7 +70,7 @@ void child(void)
 
 	for (i=0; i<TARGET_COUNT_PER_CHILD; i++) {
 		sem_wait(sem_id);
-		
+
 		counter = counter_get("counter");
 		counter++;
 		counter_set("counter", counter);

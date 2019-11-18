@@ -178,6 +178,7 @@ UPROGS=\
 	_ps\
 	_hufs_thread_test\
 	_hufs_sem_test\
+	_procon\
 
 
 fs.img: mkfs README $(UPROGS)

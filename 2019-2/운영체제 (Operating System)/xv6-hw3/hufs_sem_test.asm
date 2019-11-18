@@ -197,7 +197,7 @@ void child(void)
  185:	50                   	push   %eax
  186:	e8 e9 04 00 00       	call   674 <sem_wait>
  18b:	83 c4 10             	add    $0x10,%esp
-		
+
 		counter = counter_get("counter");
  18e:	83 ec 0c             	sub    $0xc,%esp
  191:	68 69 0c 00 00       	push   $0xc69

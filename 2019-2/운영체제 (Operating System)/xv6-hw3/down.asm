@@ -5,6 +5,11 @@ _down:     file format elf32-i386
 Disassembly of section .text:
 
 00000000 <main>:
+#include "types.h"
+#include "stat.h"
+#include "user.h"
+
+int main(void){
    0:	8d 4c 24 04          	lea    0x4(%esp),%ecx
    4:	83 e4 f0             	and    $0xfffffff0,%esp
    7:	ff 71 fc             	pushl  -0x4(%ecx)
@@ -12,7 +17,9 @@ Disassembly of section .text:
    b:	89 e5                	mov    %esp,%ebp
    d:	51                   	push   %ecx
    e:	83 ec 04             	sub    $0x4,%esp
+  return halt();
   11:	e8 00 03 00 00       	call   316 <halt>
+}
   16:	83 c4 04             	add    $0x4,%esp
   19:	59                   	pop    %ecx
   1a:	5d                   	pop    %ebp

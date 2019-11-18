@@ -1,7 +1,7 @@
 80100000 .text
-80108d30 .rodata
-80109418 .stab
-80109419 .stabstr
+8010909c .rodata
+80109784 .stab
+80109785 .stabstr
 8010a000 .data
 8010c5c0 .bss
 00000000 .debug_line
@@ -264,7 +264,7 @@
 801072d8 vector13
 80107428 vector51
 801072ef vector16
-80108d1b sem_wait
+80108da4 sem_wait
 801117a0 input
 80107c1d vector240
 80107443 vector54
@@ -506,6 +506,7 @@
 8010769e vector121
 801071aa uartputc
 80107298 vector5
+80108d1b enqueue
 801078b1 vector167
 80107821 vector155
 80107c89 vector249
@@ -516,6 +517,7 @@
 80107a6d vector204
 8010190b ilock
 8010667d sys_exec
+80108d5e dequeue
 80107749 vector137
 8010c500 _binary_initcode_start
 801058fa swtch
@@ -529,7 +531,7 @@
 801076cb vector126
 801074a6 vector65
 80107359 vector28
-80108d25 sem_signal
+80108f20 sem_signal
 8010c5b6 _binary_entryother_end
 80104f27 getnp
 801078c9 vector169
