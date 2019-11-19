@@ -102,3 +102,91 @@ Select St.Name
 from COURSE C, SECTION Se , GRADE_REPORT GR, STUDENT St
 Where C.Course_name='Database' and C.Course_number=Se.Course_number and Se.Section_identifier=GR.Section_identifier and GR.Student_number=St.Student_number;
 ```
+<br>
+
+4.
+```sql
+insert into GRADE_REPORT values
+	(17,85,NULL);
+```
+```sql
+select St.Name
+from SECTION Se1, SECTION Se2, GRADE_REPORT Gr, STUDENT St
+where Se1.Course_number = Se2.Course_number and Se1.Section_identifier <> Se2.Section_identifier and Gr.Section_identifier = Se1.Section_identifier and Gr.Student_Number = St.Student_Number
+group by St.Name, Se1.Course_Number
+having count(*) > 1;
+```
+<br>
+
+5.
+```sql
+select DISTINCT C2.Course_Name
+from COURSE C1, COURSE C2, PREREQUISITE P
+where C1.Course_Name = 'Database' and P.Course_Number = C1.Course_Number and C2.Course_Number = P.Prerequisite_Number
+union
+select DISTINCT C2.Course_Name
+from COURSE C1, COURSE C2, PREREQUISITE P1, PREREQUISITE P2, PREREQUISITE P3
+where C1.Course_Name = 'Database' and P1.Course_Number = C1.Course_Number and P2.Course_Number = P1.Prerequisite_Number
+and P2.Prerequisite_Number = C2.Course_Number;
+```
+<br>
+
+6.
+```sql
+select DISTINCT Gr.student_Number, Gr.Section_identifier, Gr.Grade
+from COURSE C, SECTION Se, GRADE_REPORT Gr, STUDENT St
+where St.Major = C.Department and C.Course_Number = Se.Course_Number and Se.Section_identifier = Gr.Section_identifier;
+```
+```sql
+CREATE TABLE MAJOR_GRADE_REPORT(
+	Student_number int not null,
+    Section_identifier int not null,
+    Grade char(1),
+    PRIMARY KEY(Student_number, Section_identifier),
+    FOREIGN KEY(Student_number) REFERENCES STUDENT(Student_number) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(Section_identifier) REFERENCES SECTION(Section_identifier) ON DELETE CASCADE ON UPDATE CASCADE
+)ENGINE=InnoDB;
+```
+```sql
+insert into MAJOR_GRADE_REPORT values
+    (8,92,'A'),
+	(17,119,'C'),
+    (8,102,'B'),
+    (8,135,'A');
+```
+<br>
+
+7.
+```sql
+select St.Major, St.Student_number, St.Name, C.Course_number, C.Course_name, Gr.Grade, Se.Year, Se.Semester
+from STUDENT St, GRADE_REPORT Gr, COURSE C,SECTION Se
+Where St.Student_number = Gr.Student_number and Gr.Section_identifier = Se.Section_identifier and C.Course_number = Se.Course_number;
+```
+<br>
+
+8.
+```sql
+update GRADE_REPORT
+set Grade='F'
+where Section_identifier = (
+	select Se.Section_identifier
+    from SECTION Se
+    where Se.Course_Number = (
+    	select C.Course_Number
+        from COURSE C
+        where C.Course_Name='Database'
+    )
+);
+```
+<br>
+
+9.
+```sql
+update STUDENT
+set Student_Number=9
+where Name='Brown';
+```
+
+```sql
+ALTER TABLE GRADE_REPORT CHANGE Crage Grade Char(1);
+```
