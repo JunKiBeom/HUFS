@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/junkibeom/OneDrive/대학/2019-2/운영체제 (Operating System)/vm-sim-hw/pagetable.cpp
+iostream
+-
+vector
+-
+pagetable.h
+/Users/junkibeom/OneDrive/대학/2019-2/운영체제 (Operating System)/vm-sim-hw/pagetable.h
+
+/Users/junkibeom/OneDrive/대학/2019-2/운영체제 (Operating System)/vm-sim-hw/pagetable.h
+vector
+-
+

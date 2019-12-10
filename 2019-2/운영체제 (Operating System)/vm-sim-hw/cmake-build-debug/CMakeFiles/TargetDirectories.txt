@@ -1,0 +1,3 @@
+/Users/junkibeom/OneDrive/대학/2019-2/운영체제 (Operating System)/vm-sim-hw/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/junkibeom/OneDrive/대학/2019-2/운영체제 (Operating System)/vm-sim-hw/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/junkibeom/OneDrive/대학/2019-2/운영체제 (Operating System)/vm-sim-hw/cmake-build-debug/CMakeFiles/vm_sim_hw.dir
