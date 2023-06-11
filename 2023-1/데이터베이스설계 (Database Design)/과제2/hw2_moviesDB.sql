@@ -1,0 +1,71 @@
+CREATE TABLE ACTOR (
+    contact_phone_numbers VARCHAR(45) NOT NULL,
+    id INT NOT NULL,
+    fname VARCHAR(45) NOT NULL,
+    lname VARCHAR(45) NOT NULL,
+    gender CHAR,
+    is_main_actor CHAR,
+    PRIMARY KEY (id)
+) ENGINE = InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE DIRECTOR (
+    id INT NOT NULL,
+    fname VARCHAR(45) NOT NULL,
+    lname VARCHAR(45) NOT NULL,
+    gender CHAR,
+    PRIMARY KEY (id)
+) ENGINE = InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE PRODUCER (
+    id INT NOT NULL,
+    fname VARCHAR(45) NOT NULL,
+    lname VARCHAR(45) NOT NULL,
+    gender CHAR,
+    PRIMARY KEY (id)
+) ENGINE = InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE MOVIE (
+    id INT NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    release_year DATE NOT NULL,
+    running_time INT NOT NULL,
+    genre VARCHAR(45),
+    director_id INT,
+    producer_id INT,
+    actor_id INT,
+    PRIMARY KEY (id),
+    FOREIGN KEY (director_id) REFERENCES DIRECTOR (id)
+      ON UPDATE CASCADE
+      ON DELETE SET NULL,
+    FOREIGN KEY (producer_id) REFERENCES PRODUCER (id)
+      ON UPDATE CASCADE
+      ON DELETE SET NULL,
+    FOREIGN KEY (actor_id) REFERENCES ACTOR (id)
+      ON UPDATE CASCADE
+      ON DELETE SET NULL
+) ENGINE = InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE ACTOR_DIRECTOR (
+    actor_id INT NOT NULL,
+    director_id INT NOT NULL,
+    PRIMARY KEY (actor_id, director_id),
+    FOREIGN KEY (actor_id) REFERENCES ACTOR(id)
+      ON UPDATE CASCADE
+      ON DELETE CASCADE,
+    FOREIGN KEY (director_id) REFERENCES DIRECTOR(id)
+      ON UPDATE CASCADE
+      ON DELETE CASCADE
+) ENGINE = InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE ACTOR_PRODUCER (
+    actor_id INT NOT NULL,
+    producer_id INT NOT NULL,
+    PRIMARY KEY (actor_id, producer_id),
+    FOREIGN KEY (actor_id) REFERENCES ACTOR(id)
+      ON UPDATE CASCADE
+      ON DELETE CASCADE,
+    FOREIGN KEY (producer_id) REFERENCES DIRECTOR(id)
+      ON UPDATE CASCADE
+      ON DELETE CASCADE
+) ENGINE = InnoDB DEFAULT CHARSET=utf8;
